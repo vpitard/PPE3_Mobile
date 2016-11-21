@@ -21,7 +21,7 @@
             android:text="Connexion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button"
+            android:id="@+id/btnConnexion"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="98dp" />
@@ -40,8 +40,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView2"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/button"
-            android:layout_toStartOf="@+id/button"
+            android:layout_toLeftOf="@+id/btnConnexion"
+            android:layout_toStartOf="@+id/btnConnexion"
             android:layout_marginRight="31dp"
             android:layout_marginEnd="31dp"
             android:textAppearance="@style/TextAppearance.AppCompat" />
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editText4"
+            android:id="@+id/LoginTxt"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:layout_alignBaseline="@+id/textView2"
             android:layout_alignBottom="@+id/textView2"
@@ -76,11 +76,11 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/Password"
+            android:id="@+id/PwdTxt"
             android:textAppearance="@style/TextAppearance.AppCompat"
-            android:layout_below="@+id/editText4"
-            android:layout_alignLeft="@+id/editText4"
-            android:layout_alignStart="@+id/editText4" />
+            android:layout_below="@+id/LoginTxt"
+            android:layout_alignLeft="@+id/LoginTxt"
+            android:layout_alignStart="@+id/LoginTxt" />
 
     </RelativeLayout>
 
