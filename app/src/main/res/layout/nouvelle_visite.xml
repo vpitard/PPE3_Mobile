@@ -73,13 +73,51 @@
             android:id="@+id/date"
             android:layout_alignBottom="@+id/btn_Date" />
 
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <CheckedTextView
+            android:text="produit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/date"
-            android:layout_alignLeft="@+id/date"
-            android:layout_alignStart="@+id/date"
-            android:layout_marginTop="45dp" />
+            android:layout_alignLeft="@+id/ListeDéroulable_Praticien"
+            android:layout_alignStart="@+id/ListeDéroulable_Praticien"
+            android:layout_marginTop="88dp"
+            android:id="@+id/checkedTextView2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:text="Produit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/checkedTextView2"
+            android:layout_alignLeft="@+id/Praticien"
+            android:layout_alignStart="@+id/Praticien"
+            android:id="@+id/Produit_liste"
+            android:textSize="18sp" />
+
+        <Button
+            android:text="@android:string/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:id="@+id/btn_ok"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/checkedTextView2"
+            android:layout_toStartOf="@+id/checkedTextView2"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_annuler"
+            android:layout_alignBaseline="@+id/btn_ok"
+            android:layout_alignBottom="@+id/btn_ok"
+            android:layout_alignRight="@+id/date"
+            android:layout_alignEnd="@+id/date"
+            android:layout_marginRight="25dp"
+            android:layout_marginEnd="25dp"
+            android:text="annuler" />
 
     </RelativeLayout>
 </LinearLayout>

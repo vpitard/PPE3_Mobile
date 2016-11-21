@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="nouveau praticien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="44dp"
+            android:id="@+id/nouveau_praticien"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="nom :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nouveau_praticien"
+            android:layout_toLeftOf="@+id/nouveau_praticien"
+            android:layout_toStartOf="@+id/nouveau_praticien"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="22dp"
+            android:id="@+id/nom"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="prenom :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nom"
+            android:layout_alignLeft="@+id/nom"
+            android:layout_alignStart="@+id/nom"
+            android:layout_marginTop="36dp"
+            android:id="@+id/prenom"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="nom"
+            android:ems="10"
+            android:id="@+id/txt_nom_praticien"
+            android:layout_alignBaseline="@+id/nom"
+            android:layout_alignBottom="@+id/nom"
+            android:layout_toRightOf="@+id/nom"
+            android:layout_toEndOf="@+id/nom" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="prenom"
+            android:ems="10"
+            android:id="@+id/txt_prenom_praticien"
+            android:layout_alignBaseline="@+id/prenom"
+            android:layout_alignBottom="@+id/prenom"
+            android:layout_alignLeft="@+id/txt_nom_praticien"
+            android:layout_alignStart="@+id/txt_nom_praticien" />
+
+        <TextView
+            android:text="secteur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_prenom_praticien"
+            android:layout_alignLeft="@+id/prenom"
+            android:layout_alignStart="@+id/prenom"
+            android:layout_marginTop="49dp"
+            android:id="@+id/secteur_praticien"
+            android:textSize="18sp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:ems="10"
+            android:id="@+id/txt_secteur"
+            android:layout_alignBaseline="@+id/secteur_praticien"
+            android:layout_alignBottom="@+id/secteur_praticien"
+            android:layout_alignLeft="@+id/txt_prenom_praticien"
+            android:layout_alignStart="@+id/txt_prenom_praticien" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_secteur"
+            android:layout_alignLeft="@+id/secteur_praticien"
+            android:layout_alignStart="@+id/secteur_praticien"
+            android:layout_marginTop="73dp"
+            android:id="@+id/activite" />
+
+        <CheckedTextView
+            android:text="CheckedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/activite"
+            android:layout_toRightOf="@+id/prenom"
+            android:layout_toEndOf="@+id/prenom"
+            android:layout_marginLeft="39dp"
+            android:layout_marginStart="39dp"
+            android:id="@+id/checkedTextView" />
+
+        <Button
+            android:text="ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="33dp"
+            android:id="@+id/btn_ok"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/activite"
+            android:layout_alignStart="@+id/activite" />
+
+        <Button
+            android:text="Annuler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_annuler"
+            android:layout_alignBaseline="@+id/btn_ok"
+            android:layout_alignBottom="@+id/btn_ok"
+            android:layout_alignRight="@+id/txt_secteur"
+            android:layout_alignEnd="@+id/txt_secteur"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="11dp" />
+    </RelativeLayout>
+</LinearLayout>

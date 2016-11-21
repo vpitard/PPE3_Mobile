@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Nouveau produit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="61dp"
+            android:id="@+id/Nouveau_produit"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="Designation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Nouveau_produit"
+            android:layout_toLeftOf="@+id/Nouveau_produit"
+            android:layout_toStartOf="@+id/Nouveau_produit"
+            android:layout_marginTop="77dp"
+            android:id="@+id/textView6"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView7"
+            android:textSize="14sp"
+            android:layout_alignTop="@+id/textView6"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:text="Annuler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/textView7"
+            android:layout_alignEnd="@+id/textView7"
+            android:layout_marginRight="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="117dp"
+            android:id="@+id/btAnnuler" />
+
+        <Button
+            android:text="ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btAnnuler"
+            android:layout_toRightOf="@+id/btAnnuler"
+            android:layout_toEndOf="@+id/btAnnuler"
+            android:id="@+id/btnOk" />
+    </RelativeLayout>
+</LinearLayout>
