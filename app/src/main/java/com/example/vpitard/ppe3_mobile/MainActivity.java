@@ -1,5 +1,6 @@
 package com.example.vpitard.ppe3_mobile;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
                     String Login = String.valueOf(((EditText) findViewById(R.id.LoginTxt)).getText());
                     String Pwd = String.valueOf(((EditText) findViewById(R.id.PwdTxt)).getText());
                     Connexion cnx = new Connexion();
+                    cnx.execute("adresse.php",Login,Pwd);
+                    try{
+                        if(cnx.get()){
+                            Intent i = new Intent(getApplicationContext(),menu.class
+                    }
 
 
 
