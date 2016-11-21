@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Nouvelle visite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="61dp"
+            android:id="@+id/Nouvelle visite"
+            android:textSize="24sp" />
+
+        <CheckedTextView
+            android:text="praticien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/Praticien"
+            android:layout_toRightOf="@+id/Praticien"
+            android:layout_toEndOf="@+id/Praticien"
+            android:layout_marginLeft="64dp"
+            android:layout_marginStart="64dp"
+            android:id="@+id/ListeDéroulable_Praticien"
+            android:layout_alignTop="@+id/Praticien" />
+
+        <TextView
+            android:text="Praticien :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:id="@+id/Praticien"
+            android:textSize="18sp"
+            android:layout_below="@+id/Nouvelle visite"
+            android:layout_toStartOf="@+id/Nouvelle visite" />
+
+        <Button
+            android:text="ajouter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ListeDéroulable_Praticien"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="27dp"
+            android:id="@+id/btn_ajouter_praticien"
+            android:elevation="0dp" />
+
+        <TextView
+            android:text="Date :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:id="@+id/btn_Date"
+            android:textSize="18sp"
+            android:layout_below="@+id/btn_ajouter_praticien"
+            android:layout_alignLeft="@+id/Praticien"
+            android:layout_alignStart="@+id/Praticien"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:layout_alignTop="@+id/btn_Date"
+            android:layout_alignLeft="@+id/Nouvelle visite"
+            android:layout_alignStart="@+id/Nouvelle visite"
+            android:id="@+id/date"
+            android:layout_alignBottom="@+id/btn_Date" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/date"
+            android:layout_alignLeft="@+id/date"
+            android:layout_alignStart="@+id/date"
+            android:layout_marginTop="45dp" />
+
+    </RelativeLayout>
+</LinearLayout>

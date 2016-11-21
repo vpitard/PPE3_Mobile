@@ -19,9 +19,17 @@ public class MainActivity extends AppCompatActivity {
 
     public View.OnClickListener observateurclic = new View.OnClickListener() {
         public void onClick(View v) {
-            String Login = String.valueOf(((EditText) findViewById(R.id.LoginTxt)).getText());
-            String Pwd = String.valueOf(((EditText) findViewById(R.id.PwdTxt)).getText());
+
+            switch (v.getId()) {
+                case R.id.btnConnexion:
+                    String Login = String.valueOf(((EditText) findViewById(R.id.LoginTxt)).getText());
+                    String Pwd = String.valueOf(((EditText) findViewById(R.id.PwdTxt)).getText());
+                    Connexion cnx = new Connexion();
+
+
+
+            }
+
         }
     }
 }
-

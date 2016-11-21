@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="Nouvelle visite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="125dp"
+            android:id="@+id/btn_nouvelle_viste" />
+
+        <TextView
+            android:text="MENU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:id="@+id/textView"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="24sp" />
+
+        <Button
+            android:text="Nouveau produit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_nouveau_produit"
+            android:layout_below="@+id/btn_nouveau_praticien"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp" />
+
+        <Button
+            android:text="consulter visite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:id="@+id/btn_consulter_visite"
+            android:layout_below="@+id/btn_nouvelle_viste"
+            android:layout_alignRight="@+id/btn_nouveau_praticien"
+            android:layout_alignEnd="@+id/btn_nouveau_praticien" />
+
+        <Button
+            android:text="nouveau praticien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:id="@+id/btn_nouveau_praticien"
+            android:layout_below="@+id/btn_consulter_visite"
+            android:layout_alignRight="@+id/btn_nouveau_produit"
+            android:layout_alignEnd="@+id/btn_nouveau_produit" />
+    </RelativeLayout>
+</LinearLayout>
