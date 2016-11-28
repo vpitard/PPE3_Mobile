@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vpitard.ppe3_mobile.nouvelle_visite">>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:text="Nouvelle visite"
+            android:text="Nouvelle_visite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="61dp"
-            android:id="@+id/Nouvelle visite"
+            android:id="@+id/Nouvelle_visite"
             android:textSize="24sp" />
 
         <CheckedTextView
@@ -36,8 +39,8 @@
             android:layout_marginTop="48dp"
             android:id="@+id/Praticien"
             android:textSize="18sp"
-            android:layout_below="@+id/Nouvelle visite"
-            android:layout_toStartOf="@+id/Nouvelle visite" />
+            android:layout_below="@+id/Nouvelle_visite"
+            android:layout_toStartOf="@+id/Nouvelle_visite" />
 
         <Button
             android:text="ajouter"
@@ -68,8 +71,8 @@
             android:inputType="date"
             android:ems="10"
             android:layout_alignTop="@+id/btn_Date"
-            android:layout_alignLeft="@+id/Nouvelle visite"
-            android:layout_alignStart="@+id/Nouvelle visite"
+            android:layout_alignLeft="@+id/Nouvelle_visite"
+            android:layout_alignStart="@+id/Nouvelle_visite"
             android:id="@+id/date"
             android:layout_alignBottom="@+id/btn_Date" />
 

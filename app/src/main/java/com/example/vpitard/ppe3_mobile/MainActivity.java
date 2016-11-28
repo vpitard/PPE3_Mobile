@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,16 +29,33 @@ public class MainActivity extends AppCompatActivity {
                     String Login = String.valueOf(((EditText) findViewById(R.id.LoginTxt)).getText());
                     String Pwd = String.valueOf(((EditText) findViewById(R.id.PwdTxt)).getText());
                     Connexion cnx = new Connexion();
-                    cnx.execute("adresse.php",Login,Pwd);
-                    try{
-                        if(cnx.get()){
-                            Intent i = new Intent(getApplicationContext(),menu.class
+                    cnx.execute("adresse.php", Login, Pwd);
+
+                    try {
+                        if (cnx.get()) {
+
+                            Intent i = new Intent(getApplicationContext(), menu.class);
+                            i.putExtra("log", Login);
+                            i.putExtra("pwd", Pwd);
+                            startActivity(i);
+                        } else {//Sinon
+                            Toast.makeText(getApplicationContext(), "Echec de la connexion", Toast.LENGTH_LONG).show();
+                        }
+                    } catch (InterruptedException | ExecutionException e) {
+                        e.printStackTrace();
                     }
-
-
-
+                    break;
             }
-
         }
+
+    };
     }
-}
+
+
+
+
+
+
+
+
+
