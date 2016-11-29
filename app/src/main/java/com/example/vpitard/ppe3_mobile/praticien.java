@@ -10,16 +10,16 @@ public class praticien {
     private String nom;
     private String prenom;
     private String secteur;
-    private String activite;
+    private Activite activite;
 
-    public praticien(String nom,String prenom,String secteur,String activite){
+    public praticien(String nom,String prenom,String secteur,Activite activite){
         this.nom=nom;
         this.prenom=prenom;
         this.secteur=secteur;
         this.activite=activite;
     }
 
-    public String getActivite() {
+    public Activite getActivite() {
         return activite;
     }
 
@@ -39,8 +39,8 @@ public class praticien {
     public static void setTousLesPraticiens(ArrayList<praticien> toutLesPraticiens){
         praticien.toutLesPraticiens = toutLesPraticiens;
     }
-    public static void ajouteUnPracticien(String nom,String prenom,String secteur,String activite){
-        praticien unPraticien = new praticien(nom,prenom,activite,secteur);
+    public static void ajouteUnPracticien(String nom,String prenom,String secteur,Activite activite){
+        praticien unPraticien = new praticien(nom,prenom,secteur,activite);
         toutLesPraticiens.add(unPraticien);
     }
 }
