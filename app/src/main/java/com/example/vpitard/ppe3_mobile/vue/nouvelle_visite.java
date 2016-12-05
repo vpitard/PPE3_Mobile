@@ -1,10 +1,12 @@
-package com.example.vpitard.ppe3_mobile;
+package com.example.vpitard.ppe3_mobile.vue;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.vpitard.ppe3_mobile.R;
 
 /**
  * Created by MAEL on 26/11/2016.
@@ -23,10 +25,11 @@ public class nouvelle_visite extends AppCompatActivity {
 
     }
     public View.OnClickListener observateurclic = new View.OnClickListener() {
-        String date = String.valueOf(((EditText) findViewById(R.id.date)).getText());
+
         //checkedtext mystere pour l'instant
 
     public void onClick(View v) {
+        String date = String.valueOf(((EditText) findViewById(R.id.date)).getText());
         switch (v.getId()) {
             case R.id.btn_ok:
                 break;

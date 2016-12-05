@@ -1,13 +1,19 @@
-package com.example.vpitard.ppe3_mobile;
+package com.example.vpitard.ppe3_mobile.vue;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.vpitard.ppe3_mobile.R;
+import com.example.vpitard.ppe3_mobile.network.Connexion;
+import com.example.vpitard.ppe3_mobile.network.Importation;
+import com.example.vpitard.ppe3_mobile.systeme.Visiteur;
+
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,17 +32,26 @@ public class MainActivity extends AppCompatActivity {
 
             switch (v.getId()) {
                 case R.id.btnConnexion:
-                    String Login = String.valueOf(((EditText) findViewById(R.id.LoginTxt)).getText());
-                    String Pwd = String.valueOf(((EditText) findViewById(R.id.PwdTxt)).getText());
+
+                    String log = String.valueOf(((EditText) findViewById(R.id.LoginTxt)).getText());
+                    String pwd = String.valueOf(((EditText) findViewById(R.id.PwdTxt)).getText());
                     Connexion cnx = new Connexion();
-                    cnx.execute("adresse.php", Login, Pwd);
 
+                    System.out.println(log);
+                    System.out.println(pwd);
+                    cnx.execute("http://10.0.3.2:88//ppe/auth.php", log, pwd);
+
+                    System.out.println(cnx);
                     try {
-                        if (cnx.get()) {
+                        System.out.println(cnx);
 
+                        if (cnx.get()) {
+                            Importation importVisiteur = new Importation();
+                            importVisiteur.execute("http://10.0.3.2/yogappli/auth.php");
+                            ArrayList<Visiteur> listeVisiteur = importVisiteur.get();
                             Intent i = new Intent(getApplicationContext(), menu.class);
-                            i.putExtra("log", Login);
-                            i.putExtra("pwd", Pwd);
+                            i.putExtra("log", log);
+                            i.putExtra("pwd", pwd);
                             startActivity(i);
                         } else {//Sinon
                             Toast.makeText(getApplicationContext(), "Echec de la connexion", Toast.LENGTH_LONG).show();

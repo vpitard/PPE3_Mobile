@@ -1,6 +1,4 @@
-package com.example.vpitard.ppe3_mobile;
-
-import static com.example.vpitard.ppe3_mobile.R.id.Praticien;
+package com.example.vpitard.ppe3_mobile.systeme;
 
 /**
  * Created by MAEL on 26/11/2016.
@@ -21,7 +19,7 @@ public class visite {
         this.dateVisite = dateVisite;
     }
 
-    public void setPraticien(com.example.vpitard.ppe3_mobile.praticien praticien) {
+    public void setPraticien(com.example.vpitard.ppe3_mobile.systeme.praticien praticien) {
         this.praticien = praticien;
     }
 
