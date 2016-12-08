@@ -49,25 +49,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="nom"
-            android:ems="10"
-            android:id="@+id/txt_nom_praticien"
-            android:layout_alignBaseline="@+id/nom"
-            android:layout_alignBottom="@+id/nom"
-            android:layout_toRightOf="@+id/nom"
-            android:layout_toEndOf="@+id/nom" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="prenom"
             android:ems="10"
             android:id="@+id/txt_prenom_praticien"
             android:layout_alignBaseline="@+id/prenom"
             android:layout_alignBottom="@+id/prenom"
-            android:layout_alignLeft="@+id/txt_nom_praticien"
-            android:layout_alignStart="@+id/txt_nom_praticien" />
+            android:layout_toRightOf="@+id/prenom"
+            android:layout_toEndOf="@+id/prenom" />
 
         <TextView
             android:text="secteur"
@@ -84,13 +71,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
             android:ems="10"
             android:id="@+id/txt_secteur"
             android:layout_alignBaseline="@+id/secteur_praticien"
             android:layout_alignBottom="@+id/secteur_praticien"
             android:layout_alignLeft="@+id/txt_prenom_praticien"
-            android:layout_alignStart="@+id/txt_prenom_praticien" />
+            android:layout_alignStart="@+id/txt_prenom_praticien"
+            android:layout_alignRight="@+id/txt_prenom_praticien"
+            android:layout_alignEnd="@+id/txt_prenom_praticien" />
 
         <TextView
             android:text="TextView"
@@ -136,5 +124,20 @@
             android:layout_alignEnd="@+id/txt_secteur"
             android:layout_marginRight="11dp"
             android:layout_marginEnd="11dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/txt_nom_praticien"
+            android:layout_alignBaseline="@+id/nom"
+            android:layout_alignBottom="@+id/nom"
+            android:layout_alignRight="@+id/txt_prenom_praticien"
+            android:layout_alignEnd="@+id/txt_prenom_praticien"
+            android:layout_alignLeft="@+id/txt_prenom_praticien"
+            android:layout_alignStart="@+id/txt_prenom_praticien"
+            android:singleLine="false"
+            android:selectAllOnFocus="false" />
     </RelativeLayout>
 </LinearLayout>

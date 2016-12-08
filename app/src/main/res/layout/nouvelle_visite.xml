@@ -1,85 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vpitard.ppe3_mobile.nouvelle_visite">>
+    tools:context="com.example.vpitard.ppe3_mobile.nouvelle_visite"
+    android:orientation="vertical">>
 
-    <RelativeLayout
+    <TextView
+        android:text="Nouvelle_visite"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp"
+        android:id="@+id/Nouvelle_visite"
+        android:textSize="24sp"
+        android:gravity="center" />
 
-        <TextView
-            android:text="Nouvelle_visite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="61dp"
-            android:id="@+id/Nouvelle_visite"
-            android:textSize="24sp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
             android:text="Praticien :"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
             android:id="@+id/Praticien"
             android:textSize="18sp"
             android:layout_below="@+id/Nouvelle_visite"
-            android:layout_toStartOf="@+id/Nouvelle_visite" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:ems="10"
-            android:layout_alignTop="@+id/btn_Date"
-            android:layout_alignLeft="@+id/Nouvelle_visite"
-            android:layout_alignStart="@+id/Nouvelle_visite"
-            android:id="@+id/date"
-            android:layout_alignBottom="@+id/btn_Date" />
-
-        <TextView
-            android:text="Date :"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_Date"
-            android:textSize="18sp"
-            android:layout_marginTop="206dp"
-            android:layout_below="@+id/Praticien"
-            android:layout_alignLeft="@+id/Praticien"
-            android:layout_alignStart="@+id/Praticien" />
-
-        <TextView
-            android:text="Produit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/Produit_liste"
-            android:textSize="18sp"
-            android:layout_marginBottom="24dp"
-            android:layout_above="@+id/date"
-            android:layout_alignLeft="@+id/btn_Date"
-            android:layout_alignStart="@+id/btn_Date" />
-
-        <CheckedTextView
-            android:text="produit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/checkedTextView2"
-            tools:layout_alignStart="@id/date"
-            android:layout_alignBaseline="@+id/Produit_liste"
-            android:layout_alignBottom="@+id/Produit_liste"
-            android:layout_alignLeft="@+id/date"
-            android:layout_alignStart="@+id/date" />
+            android:layout_toStartOf="@+id/Nouvelle_visite"
+            android:layout_weight="9.27" />
 
         <Spinner
-            android:layout_width="match_parent"
+            android:layout_width="298dp"
             android:layout_height="wrap_content"
             android:id="@+id/spinnerPraticien"
             android:layout_alignTop="@+id/Praticien"
-            android:layout_toEndOf="@+id/checkedTextView2" />
+            android:layout_toRightOf="@+id/Praticien"
+            android:layout_alignRight="@+id/btn_ok"
+            android:layout_alignEnd="@+id/btn_ok" />
+    </LinearLayout>
+
+    <Button
+        android:text="ajouter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_ajouter_praticien"
+        android:elevation="0dp"
+        android:layout_below="@+id/spinnerPraticien"
+        android:layout_toRightOf="@+id/checkedTextView2"
+        android:layout_toEndOf="@+id/checkedTextView2"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="99dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/date"
+            android:layout_alignBaseline="@+id/btn_Date"
+            android:layout_alignBottom="@+id/btn_Date"
+            android:layout_toRightOf="@+id/Praticien"
+            android:layout_toEndOf="@+id/Praticien"
+            android:layout_weight="1"
+            android:text="Date" />
+
+        <DatePicker
+            android:layout_width="326dp"
+            android:layout_height="99dp"
+            android:id="@+id/datePicker" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <Button
             android:layout_width="wrap_content"
@@ -88,32 +89,23 @@
             android:text="annuler"
             android:layout_alignBaseline="@+id/btn_ok"
             android:layout_alignBottom="@+id/btn_ok"
-            android:layout_alignLeft="@+id/date"
-            android:layout_alignStart="@+id/date"
-            android:layout_marginLeft="29dp"
-            android:layout_marginStart="29dp" />
+            android:layout_toLeftOf="@+id/btn_ajouter_praticien"
+            android:layout_toStartOf="@+id/btn_ajouter_praticien"
+            android:layout_weight="1" />
 
         <Button
             android:text="@android:string/ok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="11dp"
+            android:layout_marginBottom="12dp"
             android:id="@+id/btn_ok"
             android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/btn_annuler"
-            android:layout_toEndOf="@+id/btn_annuler"
-            android:layout_marginLeft="14dp"
-            android:layout_marginStart="14dp" />
+            android:layout_alignRight="@+id/date"
+            android:layout_alignEnd="@+id/date"
+            android:layout_marginRight="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1" />
 
-        <Button
-            android:text="ajouter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_ajouter_praticien"
-            android:elevation="0dp"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/checkedTextView2"
-            android:layout_toEndOf="@+id/checkedTextView2" />
+    </LinearLayout>
 
-    </RelativeLayout>
 </LinearLayout>

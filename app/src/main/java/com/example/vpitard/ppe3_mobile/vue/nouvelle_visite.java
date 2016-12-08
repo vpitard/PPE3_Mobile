@@ -1,5 +1,6 @@
 package com.example.vpitard.ppe3_mobile.vue;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -54,6 +55,8 @@ public class nouvelle_visite extends AppCompatActivity {
             case R.id.btn_annuler:
                 break;
             case R.id.btn_ajouter_praticien:
+                Intent i = new Intent(getApplicationContext(), nouveau_praticien.class);
+                startActivity(i);
                 break;
         }
     }
