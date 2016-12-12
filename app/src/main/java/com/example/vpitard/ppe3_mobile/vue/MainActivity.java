@@ -39,20 +39,42 @@ public class MainActivity extends AppCompatActivity {
 
                     System.out.println(log);
                     System.out.println(pwd);
+                    //String loginBaseDedonnée="root";
+                    //String mdpBaseDedonnée="";
+
                     cnx.execute("http://10.0.3.2:88//ppe/auth.php", log, pwd);
 
                     System.out.println(cnx);
                     try {
                         System.out.println(cnx);
-
+                            //connexion base de données
                         if (cnx.get()) {
+                            //importe les données
                             Importation importVisiteur = new Importation();
-                            importVisiteur.execute("http://10.0.3.2/yogappli/auth.php");
-                            ArrayList<Visiteur> listeVisiteur = importVisiteur.get();
-                            Intent i = new Intent(getApplicationContext(), menu.class);
-                            i.putExtra("log", log);
-                            i.putExtra("pwd", pwd);
-                            startActivity(i);
+                            importVisiteur.execute("http://10.0.3.2:88/ppe/import.php",log, pwd);
+                           ArrayList<Visiteur> listeVisiteur = importVisiteur.get();
+                            if (listeVisiteur!=null) {
+                                System.out.println(listeVisiteur.size());
+                                System.out.println(listeVisiteur.get(1).getPrenom());
+                                //System.out.println(listeVisiteur.get(0).getIdentifiant());
+                                int nb;
+                                for  (nb=0;nb<listeVisiteur.size();nb++){
+                                //for(Visiteur visiteur:listeVisiteur){
+                                    System.out.println("test prénom  :   "+ listeVisiteur.get(nb).getPrenom());
+                                    if(log.equals(listeVisiteur.get(nb).getIdentifiant())&&(pwd.equals(listeVisiteur.get(nb).getMdp()))){
+                                        String nomUtilisateur =listeVisiteur.get(nb).getNom();
+
+                                        String prenomUtilisateur = listeVisiteur.get(nb).getPrenom();
+                                        Intent i = new Intent(getApplicationContext(), menu.class);
+                                        i.putExtra("log", log);
+                                        i.putExtra("pwd", pwd);
+                                        startActivity(i);
+                                        Toast.makeText(getApplicationContext(),
+                                                " Bonjour "+ nomUtilisateur+ " " +prenomUtilisateur , Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                            }
                         } else {//Sinon
                             Toast.makeText(getApplicationContext(), "Echec de la connexion", Toast.LENGTH_LONG).show();
                         }

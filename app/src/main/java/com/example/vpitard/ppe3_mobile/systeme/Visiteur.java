@@ -7,54 +7,64 @@ import java.util.ArrayList;
  */
 
 public class Visiteur {
-    private String nom;
-    private String prenom;
-    private String identifiant;
-    private String mdp;
+    private int codeVisiteur;
+    private String nomVisiteur;
+    private String prenomVisiteur;
+    private String identifiantVisiteur;
+    private String motDePasseVisiteur;
 
-    public Visiteur(String unNom, String unPrenom, String unIdentifiant, String unMdp) {
-        this.nom = unNom;
-        this.prenom = unPrenom;
-        this.identifiant = unIdentifiant;
-        this.mdp = unMdp;
+    public Visiteur(int unCode, String unNom, String unPrenom, String unIdentifiant, String unMdp) {
+        this.codeVisiteur=unCode;
+        this.nomVisiteur = unNom;
+        this.prenomVisiteur = unPrenom;
+        this.identifiantVisiteur = unIdentifiant;
+        this.motDePasseVisiteur = unMdp;
+    }
+
+    public int getCode() {
+        return codeVisiteur;
     }
 
     public String getPrenom() {
-        return prenom;
+        return prenomVisiteur;
     }
 
     public String getNom() {
-        return nom;
+        return nomVisiteur;
     }
 
     public String getIdentifiant() {
-        return identifiant;
+        return identifiantVisiteur;
     }
 
     public String getMdp() {
-        return mdp;
+        return motDePasseVisiteur;
     }
 
+
+
+    public void setCode(int unCode){this.codeVisiteur = unCode; }
+
     public void setPrenom(String unPrenom) {
-        this.prenom = unPrenom;
+        this.prenomVisiteur = unPrenom;
     }
 
     public void setNom(String unNom) {
-        this.nom = unNom;
+        this.nomVisiteur = unNom;
     }
 
     public void setIdentifiant(String unId) {
-        this.identifiant = unId;
+        this.identifiantVisiteur = unId;
     }
 
     public void setMdp(String unMdp) {
-        this.mdp = unMdp;
+        this.motDePasseVisiteur = unMdp;
     }
 
     public static ArrayList<Visiteur> LesVisiteurs = new ArrayList<>();
 
-    public static void ajouteUnVisiteur(String nom, String prenom, String identifiant, String mdp) {
-        Visiteur visiteur = new Visiteur(nom, prenom, identifiant, mdp);
+    public static void ajouteUnVisiteur(int code,String nom, String prenom, String identifiant, String mdp) {
+        Visiteur visiteur = new Visiteur(code,nom, prenom, identifiant, mdp);
         LesVisiteurs.add(visiteur);
     }
 

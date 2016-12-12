@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vpitard.ppe3_mobile.nouveau_produit">
+    tools:context="com.example.vpitard.ppe3_mobile.vue.nouveau_produit">
 
     <RelativeLayout
         android:layout_width="match_parent"
