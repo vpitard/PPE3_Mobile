@@ -39,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
                     System.out.println(log);
                     System.out.println(pwd);
-                    //String loginBaseDedonnée="root";
-                    //String mdpBaseDedonnée="";
+
 
                     cnx.execute("http://10.0.3.2:88//ppe/auth.php", log, pwd);
 

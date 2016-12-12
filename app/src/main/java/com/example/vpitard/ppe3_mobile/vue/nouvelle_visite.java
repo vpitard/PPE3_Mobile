@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 import com.example.vpitard.ppe3_mobile.R;
 
@@ -29,7 +28,7 @@ public class nouvelle_visite extends AppCompatActivity {
         Button btn_ajouter_praticien = (Button) findViewById(R.id.btn_ajouter_praticien);
         btn_ajouter_praticien.setOnClickListener(observateurclic);
 
-        Spinner spinnerPraticien = (Spinner) findViewById(R.id.spinnerPraticien);
+        //Spinner spinnerPraticien = (Spinner) findViewById(R.id.spinnerPraticien);
         List<String> liste = new ArrayList<String>();
         liste.add("test1");
         liste.add("test2");
@@ -40,7 +39,7 @@ public class nouvelle_visite extends AppCompatActivity {
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
-        spinnerPraticien.setAdapter(adapter);
+       // spinnerPraticien.setAdapter(adapter);
 
     }
     public View.OnClickListener observateurclic = new View.OnClickListener() {
