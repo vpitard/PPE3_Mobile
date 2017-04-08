@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.vpitard.ppe3_mobile.R;
-import com.example.vpitard.ppe3_mobile.vue.nouveau_produit;
-import com.example.vpitard.ppe3_mobile.vue.nouvelle_visite;
 
 /**
  * Created by MAEL on 26/11/2016.
@@ -26,13 +24,20 @@ public class menu  extends AppCompatActivity {
         btn_consulter_visite.setOnClickListener(observateurclic);
         Button btn_nouveau_praticien = (Button) findViewById(R.id.btn_nouveau_praticien);
         btn_nouveau_praticien.setOnClickListener(observateurclic);
+
+
     }
 
     public View.OnClickListener observateurclic = new View.OnClickListener() {
         public void onClick(View v) {
+            Bundle b = getIntent().getExtras();
+            String log = b.getString("log");
+            String pwd = b.getString("pwd");
             switch (v.getId()) {
                 case R.id.btn_nouvelle_viste:
                     Intent nouvelleVisite = new Intent(getApplicationContext(), nouvelle_visite.class);
+                    nouvelleVisite.putExtra("log", log);
+                    nouvelleVisite.putExtra("pwd", pwd);
                     startActivity(nouvelleVisite);
                     break;
 

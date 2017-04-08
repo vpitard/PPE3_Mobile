@@ -4,12 +4,12 @@ package com.example.vpitard.ppe3_mobile.systeme;
  * Created by MAEL on 26/11/2016.
  */
 
-public class visite {
+public class Visite {
     private String dateVisite;
-    private praticien praticien;
+    private Praticien praticien;
     private Visiteur visiteur;
 
-    public void visite(String uneDateVisite, praticien unPraticien, Visiteur unVisiteur){
+    public void visite(String uneDateVisite, Praticien unPraticien, Visiteur unVisiteur){
         this.dateVisite = uneDateVisite;
         this.praticien = unPraticien;
         this.visiteur = unVisiteur;
@@ -19,7 +19,7 @@ public class visite {
         this.dateVisite = dateVisite;
     }
 
-    public void setPraticien(com.example.vpitard.ppe3_mobile.systeme.praticien praticien) {
+    public void setPraticien(Praticien praticien) {
         this.praticien = praticien;
     }
 
@@ -32,7 +32,7 @@ public class visite {
         return dateVisite;
     }
 
-    public praticien getPraticien() {
+    public Praticien getPraticien() {
         return praticien;
     }
 

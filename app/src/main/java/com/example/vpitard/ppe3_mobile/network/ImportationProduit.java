@@ -3,7 +3,7 @@ package com.example.vpitard.ppe3_mobile.network;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.vpitard.ppe3_mobile.systeme.Visiteur;
+import com.example.vpitard.ppe3_mobile.systeme.Produit;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -15,24 +15,20 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-
 /**
- * Created by MAEL on 05/12/2016.
+ * Created by MAEL on 15/12/2016.
  */
 
-public class Importation extends  AsyncTask<String,Void,ArrayList<Visiteur>> {
+public class ImportationProduit extends AsyncTask<String,Void,ArrayList<Produit>> {
     @Override
-    protected ArrayList<Visiteur> doInBackground(String... params) {
-
-
+    protected ArrayList<Produit> doInBackground(String... params) {
         try {
 
-           URL url = new URL(params[0]);
-            ArrayList<Visiteur> listeVisiteur;
+            URL url = new URL(params[0]);
+            ArrayList<Produit> listeProduit;
             HttpURLConnection cnx = (HttpURLConnection)url.openConnection();
             cnx.setRequestMethod("POST");
             cnx.setDoOutput(true);
-            System.out.println("test connexion premier");
             OutputStreamWriter osw = new OutputStreamWriter(cnx.getOutputStream());
             osw.write("login="+params[1]+"&passwd="+params[2]);
 
@@ -41,16 +37,15 @@ public class Importation extends  AsyncTask<String,Void,ArrayList<Visiteur>> {
 
             int httpResult=cnx.getResponseCode();
             if(httpResult== HttpURLConnection.HTTP_OK){
-                System.out.println("test connexion" +httpResult);
+                //System.out.println("test connexion" +httpResult);
                 InputStreamReader isr = new InputStreamReader(cnx.getInputStream());
                 BufferedReader buff = new BufferedReader(isr);
 
                 String ligne=buff.readLine();
-                System.out.println(ligne);
+                // System.out.println(ligne);
                 Gson gson=new Gson();
-                listeVisiteur =
-                        gson.fromJson(ligne,new TypeToken<ArrayList<Visiteur>>(){}.getType());
-                return listeVisiteur;
+                listeProduit = gson.fromJson(ligne,new TypeToken<ArrayList<Produit>>(){}.getType());
+                return listeProduit;
 
 
             }
@@ -61,4 +56,3 @@ public class Importation extends  AsyncTask<String,Void,ArrayList<Visiteur>> {
         return null;
     }
 }
-

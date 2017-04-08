@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.example.vpitard.ppe3_mobile.R;
 import com.example.vpitard.ppe3_mobile.network.Connexion;
-import com.example.vpitard.ppe3_mobile.network.Importation;
+import com.example.vpitard.ppe3_mobile.network.ImportationVisiteur;
 import com.example.vpitard.ppe3_mobile.systeme.Visiteur;
 
 import java.util.ArrayList;
@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
                     String pwd = String.valueOf(((EditText) findViewById(R.id.PwdTxt)).getText());
                     Connexion cnx = new Connexion();
 
-                    System.out.println(log);
-                    System.out.println(pwd);
+                  //  System.out.println(log);
+                   // System.out.println(pwd);
 
 
                     cnx.execute("http://10.0.3.2:88//ppe/auth.php", log, pwd);
@@ -49,16 +49,17 @@ public class MainActivity extends AppCompatActivity {
                             //connexion base de données
                         if (cnx.get()) {
                             //importe les données
-                            Importation importVisiteur = new Importation();
+                            ImportationVisiteur importVisiteur = new ImportationVisiteur();
                             importVisiteur.execute("http://10.0.3.2:88/ppe/import.php",log, pwd);
-                           ArrayList<Visiteur> listeVisiteur = importVisiteur.get();
+                            ArrayList<Visiteur> listeVisiteur = importVisiteur.get();
+
+
                             if (listeVisiteur!=null) {
-                                System.out.println(listeVisiteur.size());
-                                System.out.println(listeVisiteur.get(1).getPrenom());
-                                //System.out.println(listeVisiteur.get(0).getIdentifiant());
+                              //  System.out.println(listeVisiteur.size());
+                                //System.out.println(listeVisiteur.get(1).getPrenom());
+
                                 int nb;
                                 for  (nb=0;nb<listeVisiteur.size();nb++){
-                                //for(Visiteur visiteur:listeVisiteur){
                                     System.out.println("test prénom  :   "+ listeVisiteur.get(nb).getPrenom());
                                     if(log.equals(listeVisiteur.get(nb).getIdentifiant())&&(pwd.equals(listeVisiteur.get(nb).getMdp()))){
                                         String nomUtilisateur =listeVisiteur.get(nb).getNom();

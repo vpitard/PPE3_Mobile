@@ -1,126 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vpitard.ppe3_mobile.nouvelle_visite">>
+    tools:context="com.example.vpitard.ppe3_mobile.nouvelle_visite"
+    android:orientation="vertical"
+    android:weightSum="1"><![CDATA[>
+
+
+
+
+
+
+
+    ]]>
+
+    <TextView
+        android:text="Nouvelle_visite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="false"
+        android:id="@+id/Nouvelle_visite"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="24sp"
+        android:textAlignment="textStart"
+        android:layout_weight="0.11"
+        android:gravity="center" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:text="Nouvelle_visite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="61dp"
-            android:id="@+id/Nouvelle_visite"
-            android:textSize="24sp" />
-
-        <CheckedTextView
-            android:text="praticien"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/Praticien"
-            android:layout_toRightOf="@+id/Praticien"
-            android:layout_toEndOf="@+id/Praticien"
-            android:layout_marginLeft="64dp"
-            android:layout_marginStart="64dp"
-            android:id="@+id/ListeDéroulable_Praticien"
-            android:layout_alignTop="@+id/Praticien" />
+        android:layout_height="59dp"
+        android:layout_weight="0.20">
 
         <TextView
             android:text="Praticien :"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_height="match_parent"
             android:id="@+id/Praticien"
-            android:textSize="18sp"
-            android:layout_below="@+id/Nouvelle_visite"
-            android:layout_toStartOf="@+id/Nouvelle_visite" />
-
-        <Button
-            android:text="ajouter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ListeDéroulable_Praticien"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="27dp"
-            android:id="@+id/btn_ajouter_praticien"
-            android:elevation="0dp" />
-
-        <TextView
-            android:text="Date :"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:id="@+id/btn_Date"
-            android:textSize="18sp"
-            android:layout_below="@+id/btn_ajouter_praticien"
-            android:layout_alignLeft="@+id/Praticien"
-            android:layout_alignStart="@+id/Praticien"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:ems="10"
-            android:layout_alignTop="@+id/btn_Date"
-            android:layout_alignLeft="@+id/Nouvelle_visite"
-            android:layout_alignStart="@+id/Nouvelle_visite"
-            android:id="@+id/date"
-            android:layout_alignBottom="@+id/btn_Date" />
-
-        <CheckedTextView
-            android:text="produit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/date"
-            android:layout_alignLeft="@+id/ListeDéroulable_Praticien"
-            android:layout_alignStart="@+id/ListeDéroulable_Praticien"
-            android:layout_marginTop="88dp"
-            android:id="@+id/checkedTextView2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <TextView
-            android:text="Produit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/checkedTextView2"
-            android:layout_alignLeft="@+id/Praticien"
-            android:layout_alignStart="@+id/Praticien"
-            android:id="@+id/Produit_liste"
+            android:layout_toStartOf="@+id/Nouvelle_visite"
+            android:layout_alignParentTop="true"
+            android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="18sp" />
 
-        <Button
-            android:text="@android:string/ok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="13dp"
-            android:id="@+id/btn_ok"
-            android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@+id/checkedTextView2"
-            android:layout_toStartOf="@+id/checkedTextView2"
-            android:layout_marginRight="16dp"
-            android:layout_marginEnd="16dp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_annuler"
-            android:layout_alignBaseline="@+id/btn_ok"
-            android:layout_alignBottom="@+id/btn_ok"
-            android:layout_alignRight="@+id/date"
-            android:layout_alignEnd="@+id/date"
-            android:layout_marginRight="25dp"
-            android:layout_marginEnd="25dp"
-            android:text="annuler" />
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/SpinnerPraticien"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
+
+    <DatePicker
+        android:layout_width="401dp"
+        android:layout_height="127dp"
+        android:id="@+id/datePicker2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_annuler"
+        android:text="annuler"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:layout_weight="0.11" />
+
+    <Button
+        android:text="@android:string/ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_ok"
+        android:layout_weight="0.11"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </LinearLayout>

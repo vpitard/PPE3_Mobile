@@ -6,41 +6,45 @@ import java.util.ArrayList;
  * Created by MAEL on 26/11/2016.
  */
 
-public class praticien {
-    private String nom;
-    private String prenom;
-    private String secteur;
-    private Activite activite;
+public class Praticien {
 
-    public praticien(String nom,String prenom,String secteur,Activite activite){
-        this.nom=nom;
-        this.prenom=prenom;
+    private String nomPraticien;
+    private String prenomPraticien;
+    private String secteur;
+    private int codeAct;
+
+    public Praticien(String nom, String prenom, String secteur, int codeAct){
+
+        this.nomPraticien=nom;
+        this.prenomPraticien=prenom;
         this.secteur=secteur;
-        this.activite=activite;
+        this.codeAct=codeAct;
     }
 
-    public Activite getActivite() {
-        return activite;
+
+
+    public int getActivite() {
+        return codeAct;
     }
 
     public String getNom() {
-        return nom;
+        return nomPraticien;
     }
 
     public String getPrenom() {
-        return prenom;
+        return prenomPraticien;
     }
 
     public String getSecteur() {
         return secteur;
     }
 
-    public static ArrayList<praticien> toutLesPraticiens= new ArrayList<>();
-    public static void setTousLesPraticiens(ArrayList<praticien> toutLesPraticiens){
-        praticien.toutLesPraticiens = toutLesPraticiens;
+    public static ArrayList<Praticien> toutLesPraticiens= new ArrayList<>();
+    public static void setTousLesPraticiens(ArrayList<Praticien> toutLesPraticiens){
+        Praticien.toutLesPraticiens = toutLesPraticiens;
     }
-    public static void ajouteUnPracticien(String nom,String prenom,String secteur,Activite activite){
-        praticien unPraticien = new praticien(nom,prenom,secteur,activite);
+    public static void ajouteUnPracticien(String nomPraticien,String prenomPraticien,String secteur, int codeAct){
+        Praticien unPraticien = new Praticien(nomPraticien,prenomPraticien,secteur,codeAct);
         toutLesPraticiens.add(unPraticien);
     }
 }
