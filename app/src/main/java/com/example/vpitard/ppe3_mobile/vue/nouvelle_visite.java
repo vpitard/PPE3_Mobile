@@ -27,7 +27,7 @@ public class nouvelle_visite extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         String log = b.getString("log");
         String pwd = b.getString("pwd");
-        
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nouvelle_visite);
