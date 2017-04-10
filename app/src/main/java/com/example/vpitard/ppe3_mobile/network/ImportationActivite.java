@@ -3,7 +3,7 @@ package com.example.vpitard.ppe3_mobile.network;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.vpitard.ppe3_mobile.systeme.Praticien;
+import com.example.vpitard.ppe3_mobile.systeme.Activite;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -19,13 +19,13 @@ import java.util.ArrayList;
  * Created by MAEL on 13/12/2016.
  */
 
-public class ImportationPraticien extends AsyncTask<String,Void,ArrayList<Praticien>> {
+public class ImportationActivite extends AsyncTask<String,Void,ArrayList<Activite>> {
     @Override
-    protected ArrayList<Praticien> doInBackground(String... params) {
+    protected ArrayList<Activite> doInBackground(String... params) {
     try {
 
         URL url = new URL(params[0]);
-        ArrayList<Praticien> listePraticien;
+        ArrayList<Activite> listeActivite;
         HttpURLConnection cnx = (HttpURLConnection)url.openConnection();
         cnx.setRequestMethod("POST");
         cnx.setDoOutput(true);
@@ -42,10 +42,10 @@ public class ImportationPraticien extends AsyncTask<String,Void,ArrayList<Pratic
             BufferedReader buff = new BufferedReader(isr);
 
             String ligne=buff.readLine();
-            System.out.println(ligne);
+           // System.out.println(ligne);
             Gson gson=new Gson();
-            listePraticien = gson.fromJson(ligne,new TypeToken<ArrayList<Praticien>>(){}.getType());
-            return listePraticien;
+            listeActivite = gson.fromJson(ligne,new TypeToken<ArrayList<Activite>>(){}.getType());
+            return listeActivite;
 
 
         }

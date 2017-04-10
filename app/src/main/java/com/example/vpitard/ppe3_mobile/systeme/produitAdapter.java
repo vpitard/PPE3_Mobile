@@ -1,4 +1,4 @@
-package com.example.vpitard.ppe3_mobile.vue;
+package com.example.vpitard.ppe3_mobile.systeme;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.vpitard.ppe3_mobile.R;
-import com.example.vpitard.ppe3_mobile.systeme.Produit;
 
 import java.util.List;
 

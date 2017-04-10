@@ -48,7 +48,8 @@
             android:layout_height="match_parent"
             android:id="@+id/SpinnerPraticien"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            style="@style/Platform.Widget.AppCompat.Spinner" />
 
     </RelativeLayout>
 

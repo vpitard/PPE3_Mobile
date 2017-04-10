@@ -15,13 +15,18 @@ import com.example.vpitard.ppe3_mobile.R;
 public class nouveau_produit extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
+        Bundle b = getIntent().getExtras();
+        String log = b.getString("log");
+        String pwd = b.getString("pwd");
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.nouveau_produit);
+        Button btn_ok = (Button) findViewById(R.id.btn_ok);
+        btn_ok.setOnClickListener(observateurclic);
+        Button btn_annuler = (Button) findViewById(R.id.btn_annuler);
+        btn_annuler.setOnClickListener(observateurclic);
 
-            setContentView(R.layout.nouveau_produit);
-            Button btn_ok = (Button) findViewById(R.id.btn_ok);
-            btn_ok.setOnClickListener(observateurclic);
-            Button btn_annuler = (Button) findViewById(R.id.btn_annuler);
-            btn_annuler.setOnClickListener(observateurclic);
+
+
 
         }
 
