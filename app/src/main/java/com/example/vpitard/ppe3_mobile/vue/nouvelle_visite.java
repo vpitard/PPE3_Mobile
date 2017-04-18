@@ -12,11 +12,8 @@ import android.widget.Toast;
 import com.example.vpitard.ppe3_mobile.R;
 import com.example.vpitard.ppe3_mobile.network.Exportation;
 import com.example.vpitard.ppe3_mobile.network.ImportationPraticien;
-import com.example.vpitard.ppe3_mobile.network.ImportationProduit;
 import com.example.vpitard.ppe3_mobile.systeme.Praticien;
-import com.example.vpitard.ppe3_mobile.systeme.Produit;
 import com.example.vpitard.ppe3_mobile.systeme.praticienAdapter;
-import com.example.vpitard.ppe3_mobile.systeme.produitAdapter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,14 +45,11 @@ public class nouvelle_visite extends AppCompatActivity {
         ImportationPraticien importPraticien = new ImportationPraticien();
 
         importPraticien.execute("http://10.0.3.2:88/ppe/ImportPraticien.php", log, pwd);
-        ImportationProduit importProduit = new ImportationProduit();
-        importProduit.execute("http://10.0.3.2:88/ppe/importProduit.php", log, pwd);
+
         try {
             ArrayList<Praticien> listePraticien = importPraticien.get();
-            ArrayList<Produit> listeProduit = importProduit.get();
 
             praticienAdapter adapter = new praticienAdapter(getApplicationContext(), listePraticien);
-            produitAdapter adapterProduit = new produitAdapter(getApplicationContext(), listeProduit);
             Spinner SpinnerPraticien = (Spinner) findViewById(R.id.SpinnerPraticien);
             SpinnerPraticien.setAdapter(adapter);
 

@@ -22,6 +22,7 @@
         <activity android:name=".vue.nouvelle_visite">
         </activity>
         <activity android:name=".vue.nouveau_produit"> </activity>
+        <activity android:name=".vue.consulter_visite"> </activity>
     </application>
 
 </manifest>

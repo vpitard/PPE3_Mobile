@@ -49,7 +49,9 @@ public class menu  extends AppCompatActivity {
                     break;
 
                 case R.id.btn_consulter_visite:
-                    Intent consulter_visite = new Intent(getApplicationContext(), nouveau_produit.class);
+                    Intent consulter_visite = new Intent(getApplicationContext(), com.example.vpitard.ppe3_mobile.vue.consulter_visite.class);
+                    consulter_visite.putExtra("log", log);
+                    consulter_visite.putExtra("pwd", pwd);
                     startActivity(consulter_visite);
                     break;
 

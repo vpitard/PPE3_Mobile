@@ -1,7 +1,5 @@
 package com.example.vpitard.ppe3_mobile.systeme;
 
-import java.util.ArrayList;
-
 /**
  * Created by MAEL on 26/11/2016.
  */
@@ -40,15 +38,6 @@ public class Praticien {
 
     public String getSecteur() {
         return secteur;
-    }
-
-    public static ArrayList<Praticien> toutLesPraticiens= new ArrayList<>();
-    public static void setTousLesPraticiens(ArrayList<Praticien> toutLesPraticiens){
-        Praticien.toutLesPraticiens = toutLesPraticiens;
-    }
-    public static void ajouteUnPracticien(int codePraticien, String nomPraticien,String prenomPraticien,String secteur){
-        Praticien unPraticien = new Praticien(codePraticien,nomPraticien,prenomPraticien,secteur);
-        toutLesPraticiens.add(unPraticien);
     }
 
 

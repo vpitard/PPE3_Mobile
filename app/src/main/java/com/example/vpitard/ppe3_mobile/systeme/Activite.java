@@ -32,13 +32,7 @@ public class Activite {
 
     public static ArrayList<Activite> toutelesactivites = new ArrayList<>();
 
-    public static void setToutLesProduit(ArrayList<Produit> toutLesProduit){
-        Produit.toutLesProduit = toutLesProduit;
-    }
-    public static void ajouteUneActivite(int codeAct ,String libelleAct){
-        Activite uneActvite = new Activite(codeAct, libelleAct);
-        toutelesactivites.add(uneActvite);
-    }
+
 
 
     }
