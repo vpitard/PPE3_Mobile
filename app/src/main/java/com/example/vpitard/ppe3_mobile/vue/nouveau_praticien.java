@@ -13,6 +13,9 @@ import com.example.vpitard.ppe3_mobile.network.ImportationActivite;
 import com.example.vpitard.ppe3_mobile.systeme.Activite;
 import com.example.vpitard.ppe3_mobile.systeme.activiterAdapter;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -60,13 +63,27 @@ public class nouveau_praticien extends AppCompatActivity {
                 String txt_nom_praticien = String.valueOf(((EditText) findViewById(R.id.txt_nom_praticien)).getText());
                 String txt_prenom_praticien = String.valueOf(((EditText) findViewById(R.id.txt_prenom_praticien)).getText());
 
-                Object uneActivite  = ((Spinner)findViewById(R.id.spinnerActivite)).getSelectedItem();
+                Activite uneActivite =(Activite )((Spinner)findViewById(R.id.spinnerActivite)).getSelectedItem();
                 switch (v.getId()) {
                     case R.id.btn_ok:
 
 
                         Toast.makeText(getApplicationContext(),
-                                " Un praticien a ete ajouter au non de :  "+txt_nom_praticien+  " et au prenom de :  "+ txt_prenom_praticien + uneActivite.toString(),   Toast.LENGTH_SHORT).show();
+                                " Un praticien a ete ajouter au non de :  "+txt_nom_praticien+  " et au prenom de :  "+ txt_prenom_praticien +"sa profession est "+ uneActivite.getLibelle(),   Toast.LENGTH_SHORT).show();
+
+
+                        JSONObject object = new JSONObject();
+                        try {
+                            object.put("prenomPraticien", txt_prenom_praticien);
+                            object.put("nomPraticien",txt_nom_praticien );
+                            object.put("codeAct",uneActivite.getcode() );
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+
                         break;
                     case R.id.btn_annuler:
                         break;

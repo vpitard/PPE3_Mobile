@@ -43,6 +43,8 @@ public class menu  extends AppCompatActivity {
 
                 case R.id.btn_nouveau_produit:
                     Intent nouveau_produit = new Intent(getApplicationContext(), com.example.vpitard.ppe3_mobile.vue.nouveau_produit.class);
+                    nouveau_produit.putExtra("log", log);
+                    nouveau_produit.putExtra("pwd", pwd);
                     startActivity(nouveau_produit);
                     break;
 

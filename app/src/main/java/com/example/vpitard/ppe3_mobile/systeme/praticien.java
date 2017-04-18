@@ -8,13 +8,15 @@ import java.util.ArrayList;
 
 public class Praticien {
 
-    private String nomPraticien;
-    private String prenomPraticien;
-    private String secteur;
-    private int codeAct;
+    public int codePraticien;
+    public String  nomPraticien;
+    public String prenomPraticien;
+    public String secteur;
+    public int codeAct;
 
-    public Praticien(String nom, String prenom, String secteur, int codeAct){
+    public Praticien(int codePraticien ,String nom, String prenom, String secteur){
 
+        this.codePraticien=codePraticien;
         this.nomPraticien=nom;
         this.prenomPraticien=prenom;
         this.secteur=secteur;
@@ -22,6 +24,7 @@ public class Praticien {
     }
 
 
+    public int getCodePraticien(){return codePraticien;}
 
     public int getActivite() {
         return codeAct;
@@ -43,8 +46,10 @@ public class Praticien {
     public static void setTousLesPraticiens(ArrayList<Praticien> toutLesPraticiens){
         Praticien.toutLesPraticiens = toutLesPraticiens;
     }
-    public static void ajouteUnPracticien(String nomPraticien,String prenomPraticien,String secteur, int codeAct){
-        Praticien unPraticien = new Praticien(nomPraticien,prenomPraticien,secteur,codeAct);
+    public static void ajouteUnPracticien(int codePraticien, String nomPraticien,String prenomPraticien,String secteur){
+        Praticien unPraticien = new Praticien(codePraticien,nomPraticien,prenomPraticien,secteur);
         toutLesPraticiens.add(unPraticien);
     }
+
+
 }

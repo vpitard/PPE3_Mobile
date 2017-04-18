@@ -31,7 +31,6 @@ public class ImportationActivite extends AsyncTask<String,Void,ArrayList<Activit
         cnx.setDoOutput(true);
         OutputStreamWriter osw = new OutputStreamWriter(cnx.getOutputStream());
         osw.write("login="+params[1]+"&passwd="+params[2]);
-
         osw.flush();
         osw.close();
 
