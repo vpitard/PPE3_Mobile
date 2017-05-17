@@ -24,6 +24,8 @@ public class menu  extends AppCompatActivity {
         btn_consulter_visite.setOnClickListener(observateurclic);
         Button btn_nouveau_praticien = (Button) findViewById(R.id.btn_nouveau_praticien);
         btn_nouveau_praticien.setOnClickListener(observateurclic);
+        Button btn_rapport_visite = (Button) findViewById(R.id.btn_rapport_visite);
+        btn_rapport_visite.setOnClickListener(observateurclic);
 
 
     }
@@ -49,7 +51,7 @@ public class menu  extends AppCompatActivity {
                     break;
 
                 case R.id.btn_consulter_visite:
-                    Intent consulter_visite = new Intent(getApplicationContext(), com.example.vpitard.ppe3_mobile.vue.consulter_visite.class);
+                    Intent consulter_visite = new Intent(getApplicationContext(), prescrire_visite.class);
                     consulter_visite.putExtra("log", log);
                     consulter_visite.putExtra("pwd", pwd);
                     startActivity(consulter_visite);
@@ -61,6 +63,13 @@ public class menu  extends AppCompatActivity {
                     nouveau_praticien.putExtra("pwd", pwd);
 
                     startActivity(nouveau_praticien);
+                    break;
+
+                case R.id.btn_rapport_visite:
+                    Intent rapportVisite = new Intent(getApplicationContext(), com.example.vpitard.ppe3_mobile.vue.rapportVisite.class);
+                    rapportVisite.putExtra("log", log);
+                    rapportVisite.putExtra("pwd", pwd);
+                    startActivity(rapportVisite);
                     break;
 
             }

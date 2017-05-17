@@ -13,6 +13,7 @@ public class Visite {
     public Praticien praticien;
     public Visiteur visiteur;
 
+
     public void visite(int codeVisite ,String uneDateVisite,int codePraticien, Praticien unPraticien, Visiteur unVisiteur){
         this.codeVisite = codeVisite;
         this.codePraticien = codePraticien;

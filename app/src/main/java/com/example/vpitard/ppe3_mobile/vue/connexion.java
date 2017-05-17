@@ -1,5 +1,4 @@
 package com.example.vpitard.ppe3_mobile.vue;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,8 +14,7 @@ import com.example.vpitard.ppe3_mobile.systeme.Visiteur;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
-
-public class MainActivity extends AppCompatActivity {
+public class connexion extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         Button btnConnexion = (Button) findViewById(R.id.btnConnexion);
         btnConnexion.setOnClickListener(observateurclic);
     }
-
     public View.OnClickListener observateurclic = new View.OnClickListener() {
         public void onClick(View v) {
 
@@ -36,13 +33,10 @@ public class MainActivity extends AppCompatActivity {
                     String log = String.valueOf(((EditText) findViewById(R.id.LoginTxt)).getText());
                     String pwd = String.valueOf(((EditText) findViewById(R.id.PwdTxt)).getText());
                     Connexion cnx = new Connexion();
-
                   //  System.out.println(log);
                    // System.out.println(pwd);
-
-
-                    cnx.execute("http://10.0.3.2:88//ppe/auth.php", log, pwd);
-
+                    cnx.execute("http://172.21.105.4/android/auth.php",log, pwd);
+                   // cnx.execute("http://10.0.3.2:88/ppe/auth.php",log,pwd);
                     System.out.println(cnx);
                     try {
                         System.out.println(cnx);
@@ -50,20 +44,18 @@ public class MainActivity extends AppCompatActivity {
                         if (cnx.get()) {
                             //importe les données
                             ImportationVisiteur importVisiteur = new ImportationVisiteur();
-                            importVisiteur.execute("http://10.0.3.2:88/ppe/import.php",log, pwd);
+                            importVisiteur.execute("http://172.21.105.4/android/import.php",log, pwd);
+                           // importVisiteur.execute("http://10.0.3.2:88/ppe/import.php",log,pwd);
+                            //importVisiteur.execute("http://10.0.3.2:88/ppe/import.php",log,pwd);
                             ArrayList<Visiteur> listeVisiteur = importVisiteur.get();
-
-
                             if (listeVisiteur!=null) {
                               //  System.out.println(listeVisiteur.size());
                                 //System.out.println(listeVisiteur.get(1).getPrenom());
-
                                 int nb;
                                 for  (nb=0;nb<listeVisiteur.size();nb++){
                                     System.out.println("test prénom  :   "+ listeVisiteur.get(nb).getPrenom());
                                     if(log.equals(listeVisiteur.get(nb).getIdentifiant())&&(pwd.equals(listeVisiteur.get(nb).getMdp()))){
                                         String nomUtilisateur =listeVisiteur.get(nb).getNom();
-
                                         String prenomUtilisateur = listeVisiteur.get(nb).getPrenom();
                                         Intent i = new Intent(getApplicationContext(), menu.class);
                                         i.putExtra("log", log);
@@ -73,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                                                 " Bonjour "+ nomUtilisateur+ " " +prenomUtilisateur , Toast.LENGTH_SHORT).show();
                                     }
                                 }
-
                             }
                         } else {//Sinon
                             Toast.makeText(getApplicationContext(), "Echec de la connexion", Toast.LENGTH_LONG).show();

@@ -7,13 +7,19 @@ import java.util.ArrayList;
  */
 
 public class Produit {
+    private int id;
     private int codeProduit;
     private String designationProduit;
 
 
-    public Produit(int codeProduit,String designationProduit) {
+    public Produit(int id,int codeProduit,String designationProduit) {
+        this.id=id;
         this.codeProduit=codeProduit;
         this.designationProduit=designationProduit;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getCodeProduit() {
@@ -35,8 +41,8 @@ public class Produit {
     public static void setToutLesProduit(ArrayList<Produit> toutLesProduit){
         Produit.toutLesProduit = toutLesProduit;
     }
-    public static void ajouteUnProduit(int codeProduit,String designationProduit){
-        Produit unProduit = new Produit(codeProduit, designationProduit);
+    public static void ajouteUnProduit(int id,int codeProduit,String designationProduit){
+        Produit unProduit = new Produit(id,codeProduit, designationProduit);
         toutLesProduit.add(unProduit);
     }
 }
